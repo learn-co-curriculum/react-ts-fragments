@@ -108,7 +108,15 @@ need an element that wraps around these attributes. A fragment can be used here,
 and can still take a key attribute:
 
 ```jsx
-function Bookshelf(props) {
+interface Props {
+  books: {
+    id: number;
+    title: string;
+    author: string;
+  }[]
+}
+
+function Bookshelf(props: Props) {
   return (
     <section>
       {props.books.map((book) => (
